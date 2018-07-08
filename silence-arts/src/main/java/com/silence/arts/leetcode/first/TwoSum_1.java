@@ -10,7 +10,7 @@ import java.util.Map;
  * <b>日期：</b>2018-07-01 11:15<br>
  * <b>详细说明：</b>solve the problem two sum...<br>
  */
-public class TwoSum {
+public class TwoSum_1 {
 
     /**
      * solution 1, For the first time, just think about solve it.
@@ -55,7 +55,7 @@ public class TwoSum {
 
 
     public static void main(String[] args) {
-        TwoSum twoSum = new TwoSum();
+        TwoSum_1 twoSum = new TwoSum_1();
         int[] tem = new int[]{3, 3};
         int[] result = twoSum.twoSum2(tem, 6);
         for (int i = 0; i < result.length; i++) {

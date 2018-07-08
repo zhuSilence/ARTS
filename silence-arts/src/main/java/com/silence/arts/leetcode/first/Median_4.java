@@ -1,4 +1,4 @@
-package com.silence.arts;
+package com.silence.arts.leetcode.first;
 
 import java.util.Arrays;
 
@@ -9,7 +9,7 @@ import java.util.Arrays;
  * <b>Date：</b>2018-07-02 22:23<br>
  * <b>Desc：</b>无<br>
  */
-public class Median {
+public class Median_4 {
 
     /**
      * T System.arraycopy(nums1, 0, sum, 0, nums1.length);

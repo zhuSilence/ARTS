@@ -9,7 +9,7 @@ import java.util.LinkedList;
  * <b>日期：</b>2018-07-01 12:11<br>
  * <b>详细说明：</b>无<br>
  */
-public class AddTwoNumbers {
+public class AddTwoNumbers_2 {
 
     public static ListNode addTwoNumbers(ListNode l1, ListNode l2) {
 
