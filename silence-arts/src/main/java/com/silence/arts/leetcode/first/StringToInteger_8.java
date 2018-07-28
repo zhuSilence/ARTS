@@ -11,6 +11,12 @@ public class StringToInteger_8 {
 
 
     /**
+     * ASCII码
+     *
+     * 43 --> +
+     * 45 --> -
+     * 48 --> 0
+     * 57 --> 9
      * @param str
      * @return
      */
@@ -61,7 +67,7 @@ public class StringToInteger_8 {
 
     public static void main(String[] args) {
 
-        System.out.println(myAtoi("+9223372036854775809"));
+        System.out.println(myAtoi("-9-9"));
 //        String s = "91283472332";
 //        System.out.println(s);
 //        if (s.compareTo(String.valueOf(Integer.MAX_VALUE)) > 0) {
