@@ -9,6 +9,13 @@ package com.silence.arts.leetcode.first;
  */
 public class PalindromeNumber_9 {
 
+    /**
+     * 转换为字符串，然后反转进行比较
+     * 注意before.reverse() 会将before改变，不会生成新的内存对象
+     *
+     * @param x
+     * @return
+     */
     public static boolean isPalindrome(int x) {
         String b = String.valueOf(x);
         StringBuilder before = new StringBuilder(b);
