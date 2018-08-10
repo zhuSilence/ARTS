@@ -7,24 +7,29 @@ import java.util.List;
  * <br>
  * <b>Function：</b><br>
  * <b>Author：</b>@author Silence<br>
- * <b>Date：</b>2018-08-07 23:21<br>
+ * <b>Date：</b>2018-08-10 22:49<br>
  * <b>Desc：</b>无<br>
  */
-public class Binary_Tree_Inorder_Traversal_94 {
+public class PreorderTraversal_144 {
 
+    /**
+     * return list
+     */
     private List<Integer> integerList = new ArrayList<>();
 
+    /**
+     * treeNode list
+     */
     private List<TreeNode> treeNodeList = new ArrayList<>();
 
 
     /**
-     * Binary Tree Inorder Traversal
-     * 二叉树中序遍历
+     * Binary Tree Preorder Traversal
      *
      * @param root
      * @return
      */
-    public List<Integer> inorderTraversal(TreeNode root) {
+    public List<Integer> preorderTraversal(TreeNode root) {
         if (root != null) {
             getVal(root);
             return integerList;
@@ -32,52 +37,49 @@ public class Binary_Tree_Inorder_Traversal_94 {
         return integerList;
     }
 
-
     /**
      * Recursion 递归
      *
      * @param root
      */
     private void getVal(TreeNode root) {
-        if (root.left != null) {
+        integerList.add(root.val);
+        if (root.right != null) {
             treeNodeList.add(root);
+        }
+        if (root.left != null) {
             getVal(root.left);
         } else {
-            integerList.add(root.val);
-            if (root.right != null) {
-                getVal(root.right);
-            } else {
-                while (treeNodeList.size() > 0) {
-                    TreeNode temp = treeNodeList.get(treeNodeList.size() - 1);
-                    treeNodeList.remove(treeNodeList.size() - 1);
-                    integerList.add(temp.val);
-                    if (temp.right != null) {
-                        getVal(temp.right);
-                    }
+            while (treeNodeList.size() > 0) {
+                TreeNode temp = treeNodeList.get(treeNodeList.size() - 1);
+                treeNodeList.remove(treeNodeList.size() - 1);
+                if (temp.right != null) {
+                    getVal(temp.right);
                 }
             }
+
         }
     }
 
 
     public static void main(String[] args) {
-        Binary_Tree_Inorder_Traversal_94 object = new Binary_Tree_Inorder_Traversal_94();
-//
+        PreorderTraversal_144 object = new PreorderTraversal_144();
+
 //        TreeNode root = new TreeNode(2);
 //        TreeNode r1 = new TreeNode(3);
-        TreeNode l1 = new TreeNode(1);
-//
+//        TreeNode l1 = new TreeNode(1);
+////
 //        root.left = r1;
 //        root.right = null;
-//
+////
 //        r1.left = l1;
 //        r1.right = null;
-//
-        l1.left = null;
-        l1.right = null;
-//
-        List<Integer> list = object.inorderTraversal(l1);
-        System.out.println(list);
+////
+//        l1.left = null;
+//        l1.right = null;
+////
+//        List<Integer> list = object.preorderTraversal(root);
+//        System.out.println(list);
 
 //        TreeNode n1 = new TreeNode(1);
 //        TreeNode n2 = new TreeNode(2);
@@ -106,37 +108,27 @@ public class Binary_Tree_Inorder_Traversal_94 {
 //        n8.left = null;
 //        n8.right = null;
 //
-//        List<Integer> list1 = object.inorderTraversal(n1);
+//        List<Integer> list1 = object.preorderTraversal(n1);
 //        System.out.println(list1);
 
-//        TreeNode n1 = new TreeNode(4);
-//        TreeNode n2 = new TreeNode(1);
-//        TreeNode n3 = new TreeNode(2);
-//        TreeNode n4 = new TreeNode(3);
-//        n1.left = n2;
-//        n1.right = null;
-//
-//        n2.left = n3;
-//        n2.right = null;
-//
-//        n3.left = n4;
-//        n3.right = null;
-//
-//        n4.left = null;
-//        n4.right = null;
-//
-//        List<Integer> list1 = object.inorderTraversal(n1);
-//        System.out.println(list1);
+        TreeNode n1 = new TreeNode(4);
+        TreeNode n2 = new TreeNode(1);
+        TreeNode n3 = new TreeNode(2);
+        TreeNode n4 = new TreeNode(3);
+        n1.left = n2;
+        n1.right = null;
 
-    }
-}
+        n2.left = n3;
+        n2.right = null;
 
-class TreeNode {
-    int val;
-    TreeNode left;
-    TreeNode right;
+        n3.left = n4;
+        n3.right = null;
 
-    TreeNode(int x) {
-        val = x;
+        n4.left = null;
+        n4.right = null;
+
+        List<Integer> list1 = object.preorderTraversal(n1);
+        System.out.println(list1);
+
     }
 }
