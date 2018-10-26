@@ -1,4 +1,5 @@
-package com.silence.arts.leetcode.second;
+package com.silence.arts.list;
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -69,8 +70,6 @@ public class SortList_148 {
         list.get(left).val = key;
         return left;
     }
-
-
 
 
     public static void main(String[] args) {
