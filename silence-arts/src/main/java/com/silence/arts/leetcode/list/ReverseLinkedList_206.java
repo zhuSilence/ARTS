@@ -1,4 +1,4 @@
-package com.silence.arts.list;
+package com.silence.arts.leetcode.list;
 
 /**
  * <br>
